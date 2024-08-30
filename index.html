@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="start-page" class="screen">
+        <h1>BLACKJACK</h1>
+        <p>"99% of gamblers quit before they win big"</p>
+        <button onclick="showGameModes()">Start</button>
+    </div>
+
+    <div id="mode-select-page" class="screen hidden">
+        <h2>Select Game Mode</h2>
+        <button onclick="startGame('endless')">Endless Mode</button>
+        <button onclick="startGame('money')">Play with Money</button>
+    </div>
+
+    <div id="game-page" class="screen hidden">
+        <div id="betting-section" class="hidden">
+            <h2>Enter your bet:</h2>
+            <input type="number" id="bet-amount" min="1" placeholder="Amount">
+            <button onclick="placeBet()">Place Bet</button>
+        </div>
+        <div id="gameplay-section">
+            <div id="dealer-hand">
+                <h3>Dealer's Hand</h3>
+                <div id="dealer-cards" class="cards"></div>
+                <p id="dealer-score"></p>
+            </div>
+            <div id="player-hand">
+                <h3>Your Hand</h3>
+                <div id="player-cards" class="cards"></div>
+                <p id="player-score"></p>
+            </div>
+            <div id="controls">
+                <button onclick="hit()">Hit</button>
+                <button onclick="stand()">Stand</button>
+                <button onclick="doubleDown()">Double Down</button>
+                <button onclick="split()">Split</button>
+            </div>
+            <div id="message"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
